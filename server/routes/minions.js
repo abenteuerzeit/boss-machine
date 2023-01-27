@@ -7,7 +7,7 @@ const { getAllFromDatabase, getFromDatabaseById, addToDatabase, updateInstanceIn
 // GET /api/minions to get an array of all minions.
 minionsRouter.get('/', (req, res, next) => {
     const minions = getAllFromDatabase('minions');
-    res.send(minions);
+    res.status(200).send(minions);
 });
 
 minionsRouter.param('minionId', (req, res, next, minionId) => {
