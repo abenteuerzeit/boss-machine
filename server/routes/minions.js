@@ -1,6 +1,7 @@
 const express = require('express');
 const minionsRouter = express.Router();
 const { getAllFromDatabase, getFromDatabaseById, addToDatabase, updateInstanceInDatabase, deleteFromDatabasebyId } = require('../db.js');
+const workRouter = require('./work.js');
 
 // Route /api/minions
 
@@ -52,4 +53,5 @@ minionsRouter.delete('/:minionId', (req, res, next) => {
     }
 });
 
+minionsRouter.use('/:minionId/work', workRouter);
 module.exports = minionsRouter;
