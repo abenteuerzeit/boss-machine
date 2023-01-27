@@ -26,7 +26,7 @@ app.use('/api', apiRouter);
 
 app.use((err, req, res, next) => {
   console.error(err.message);
-  res.sendStatus(err.status || 400);
+  res.status(err.status).send(err.message);
 });
 
 // This conditional is here for testing purposes:
