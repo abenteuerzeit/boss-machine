@@ -24,10 +24,6 @@ app.use(morgan('dev'));
 const apiRouter = require('./server/api');
 app.use('/api', apiRouter);
 
-apiRouter.get('/', (req, res, next) => {
-  res.send({data: 'hello world'});
-});
-
 // This conditional is here for testing purposes:
 if (!module.parent) { 
   // Add your code to start the server listening at PORT below:
