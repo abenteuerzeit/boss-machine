@@ -1,9 +1,8 @@
 # Boss Machine
 
-Welcome to the Boss Machine Adventure Time project!
+Welcome to the Boss Machine project!
 
-This project is an interactive web application that allows users to embark on an adventure through time. The front-end of the application is available to view on [netlify](https://boss-machine-abenteuerzeit.netlify.app/#/)
-
+This project is an interactive web application. The front-end of the application is available to view on [netlify](https://boss-machine-abenteuerzeit.netlify.app/#/)
 Please note that in order for the application to function properly, a server must be running. To start the server, simply run the command "npm start" in your terminal.
   
 ## Installation 
