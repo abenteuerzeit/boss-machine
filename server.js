@@ -28,9 +28,7 @@ app.use('/api', apiRouter);
 if (!module.parent) { 
   // Add your code to start the server listening at PORT below:
   app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
-    console.log(`http://localhost:${PORT}`)
-    console.log('Press Ctrl+C to quit.');
+    console.log(`Server is listening on port ${PORT}. Example route: http://localhost:${PORT}/api/minions`)
   });
 }
 
