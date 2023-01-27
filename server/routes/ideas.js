@@ -1,4 +1,5 @@
 const express = require('express');
+const checkMillionDollarIdea = require('../checkMillionDollarIdea.js');
 const ideasRouter = express.Router();
 const { getAllFromDatabase, addToDatabase, getFromDatabaseById, updateInstanceInDatabase, deleteFromDatabasebyId } = require('../db.js');
 
@@ -11,7 +12,7 @@ ideasRouter.get('/', (req, res, next) => {
 });
 
 // POST /api/ideas to create a new idea and save it to the database.
-ideasRouter.post('/', (req, res, next) => {
+ideasRouter.post('/', checkMillionDollarIdea, (req, res, next) => {
     const newIdea = addToDatabase('ideas', req.body);
     res.status(201).send(newIdea);
 });
@@ -32,7 +33,7 @@ ideasRouter.get('/:ideaId', (req, res, next) => {
 });
 
 // PUT /api/ideas/:ideaId to update a single idea by id.
-ideasRouter.put('/:ideaId', (req, res, next) => {
+ideasRouter.put('/:ideaId', checkMillionDollarIdea, (req, res, next) => {
     const updatedIdea = Object.assign(req.idea, req.body);
     const updated = updateInstanceInDatabase('ideas', updatedIdea);
     res.status(200).send(updated);
